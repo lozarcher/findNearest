@@ -1,6 +1,6 @@
 package com.loz;
 
-public class RequestClass {
+public class RequestObject {
     private String latitude;
     private String longitude;
 

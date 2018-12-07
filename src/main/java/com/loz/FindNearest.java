@@ -12,14 +12,15 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
 
-public class FindNearest implements RequestHandler<RequestClass, ResponseObject> {
+public class FindNearest implements RequestHandler<RequestObject, ResponseObject> {
 
+    // Set an environment variable 'googleKey' with permission to use the Places API
     private static String GOOGLE_KEY = System.getenv("googleKey");
+
     private static String URL_GET_PLACES = "https://maps.googleapis.com/maps/api/place/search/json?location=%s,%s&types=bar&rankby=distance&fields=photos&sensor=false&key=%s";
     private static String URL_GET_PICTURE = "https://maps.googleapis.com/maps/api/place/photo?photoreference=%s&key=%s&maxwidth=400";
 
-    public ResponseObject handleRequest(RequestClass request, Context context){
-        GoogleSearchResponse googleSearchResponse = new GoogleSearchResponse();
+    public ResponseObject handleRequest(RequestObject request, Context context){
         RestTemplate restTemplate = new RestTemplate();
 
         String getPlacesUrl = String.format(URL_GET_PLACES, request.getLatitude(), request.getLongitude(), GOOGLE_KEY);
