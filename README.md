@@ -1,4 +1,4 @@
-# findNearest
+# findNearestPub
 Example service for AWS Lambda to find the nearest pub from Google Places API for a user's location
 
 ## Prerequisite
