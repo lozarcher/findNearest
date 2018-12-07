@@ -1,5 +1,5 @@
 # findNearest
-Example AWS Lambda service for finding the nearest (e.g.) pub from Google Places API
+Example service for AWS Lambda to find the nearest pub from Google Places API given a user's location
 
 ## Prerequisite
 Requires an environment variable 'googleKey' with permission to use the Places API
