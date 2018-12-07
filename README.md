@@ -2,7 +2,7 @@
 Example service for AWS Lambda to find the nearest pub from Google Places API for a user's location
 
 ## Prerequisite
-Requires an environment variable 'googleKey' with permission to use the Places API
+Requires an environment variable 'googleKey' with permission to use the Google Places API
 
 ## Usage
 Invoke com.loz.FindNearest::handleRequest with the parameters:
