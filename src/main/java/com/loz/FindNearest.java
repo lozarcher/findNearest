@@ -36,12 +36,12 @@ public class FindNearest implements RequestHandler<RequestObject, ResponseObject
         if (response.getBody().getResults().size() > 0) {
             SearchResult result = response.getBody().getResults().get(0);
 
-            responseObject.setName(result.getName());
-            responseObject.setAddress(result.getVicinity());
-            responseObject.setRating(result.getRating().toString());
+            responseObject.setName(result.getName()!=null?result.getName():"unknown");
+            responseObject.setAddress(result.getVicinity()!=null?result.getVicinity():"unknown");
+            responseObject.setRating(result.getRating()!=null?result.getRating().toString():"unknown");
 
             List<Photo> photos = result.getPhotos();
-            if (photos.size()>0) {
+            if (photos!=null && photos.size()>0) {
                 String photoUrl = String.format(URL_GET_PICTURE, photos.get(0).getPhoto_reference(), GOOGLE_KEY);
                 responseObject.setPicture(photoUrl);
             } else {
